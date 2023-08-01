@@ -9,9 +9,9 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  max-width: 800px;
-  padding: 2rem;
+  align-items: center;
   width: 100vw;
+  padding: 2rem;
   background: #707070;
   color: #FFFFFF;
 }
@@ -30,12 +30,12 @@ header {
   margin: 3rem 2rem 0;
 }
 .hanger img {
-  width: 15%;
+  width: 100%;
 }
 .hanger .dead {
   position: absolute;
   top: -1.5rem;
-  left: 6.5rem;
+  left: 100%;
   display: grid;
   place-content: center;
   padding: 0.02rem 1rem;
@@ -74,11 +74,18 @@ header {
 .container ul {
   display: flex;
   align-items: flex-end;
+  flex-wrap: wrap;
   gap: 1rem;
 }
 .container ul li {
   font-size: 1.3;
   list-style: none;
+}
+
+@media (max-width: 430px) {
+  .hanger {
+    width: 70%;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
