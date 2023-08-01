@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HANGMAN</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <header>
+    <h1>Bem vindo ao jogo da Forca!</h1>
+    <h3>Seu objetivo é acertar o nome do filme abaixo.</h3>
+    <p>Você tem um total de 6 chances</p>
+  </header>
+  <div class="hanger">
+    <img class="hangman" src="./assets/hangman_start.svg" alt="hangman">
+    
+  </div>
+  <div class="container">
+    <ul id="ul">
+
+    </ul>
+    <div class="letrasErradas"></div>
+    <label>Digite uma letra: </label>
+    <input class="try" />
+    <div class="result"></div>
+  </div>
+
+  <script src="./script.js"></script>
+</body>
+</html>
