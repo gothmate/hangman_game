@@ -160,6 +160,7 @@ const ul = document.getElementById('ul');
 const result = document.querySelector('.result');
 const tries = document.querySelector('.try');
 const erradas = document.querySelector('.letrasErradas');
+const replayBtn = document.getElementById('replay');
 
 function isAlpha(char) {
 	return /^[a-zA-Z]+$/.test(char);
@@ -188,6 +189,8 @@ function montagem(chosenMovie, ex) {
 	}
 
 	if (!filmeEscondido.includes('__')) {
+		desabilitarInput();
+		replayBtn.disabled = false;
 		result.innerHTML += '<p>Parabéns! Você venceu.</p>';
 	}
 
@@ -198,15 +201,37 @@ function montagem(chosenMovie, ex) {
 	});
 }
 
+function desabilitarInput() {
+	tries.disabled = true;
+}
+function habilitarInput() {
+	tries.disabled = false;
+}
+
 let life = 6;
-
-const indice = Math.floor(Math.random() * filmes.length);
-const chosenMovie = filmes[indice].toLowerCase();
-
 const erros = [];
 const ex = [];
-
+const indice = Math.floor(Math.random() * filmes.length);
+let chosenMovie = filmes[indice].toLowerCase();
 let fmont = montagem(chosenMovie, ex);
+
+function replay() {
+	life = 6;
+	let index = Math.floor(Math.random() * filmes.length);
+	chosenMovie = filmes[index].toLowerCase();
+	erros.splice(0, erros.length);
+	ex.splice(0, ex.length);
+	habilitarInput();
+	montagem(chosenMovie, ex);
+	tries.value = '';
+
+	replayBtn.disabled = true;
+	result.innerHTML = '';
+	erradas.innerHTML = '';
+	hanger.innerHTML =
+		'<img class="hangman" src="./assets/hangman_start.svg" alt="hangman">';
+	tries.addEventListener('input', play);
+}
 
 function play() {
 	let tentativa = tries.value.toLowerCase();
@@ -222,6 +247,8 @@ function play() {
 					hanger.innerHTML =
 						'<img class="hangmanDead" src="./assets/hangman_dead.svg" alt="hangman"><div class="dead">*</div>';
 					result.innerHTML = `<p>O filme escolhido era: "${chosenMovie}"</p><p>Boa sorte na próxima vida...	</p>`;
+					desabilitarInput();
+					replayBtn.disabled = false;
 					return;
 				}
 			}
@@ -230,5 +257,6 @@ function play() {
 	tries.value = '';
 	fmont = montagem(chosenMovie, ex);
 }
+
 
 tries.addEventListener('input', play);
