@@ -42,6 +42,7 @@ header {
   background: #fff;
   border-radius: 50%;
   color: #860303;
+  font-weight: bolder;
   font-size: 3rem;
   width: 2ch;
   height: 2ch;
@@ -82,6 +83,32 @@ header {
   list-style: none;
 }
 
+#replay {
+  border: none;
+  padding-block: 0.5rem;
+  padding-inline: 1rem;
+  width: fit-content;
+  border-radius: 5px;
+  background: #ccc;
+  color: #272727;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.8156862745);
+}
+#replay:active {
+  box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.8156862745);
+}
+#replay:hover {
+  animation: 1s pulse infinite;
+  transition: 600ms rgba(255, 255, 255, 0.2);
+}
+
+@keyframes pulse {
+  0%, 100% {
+    box-shadow: 0 0 5px #fff;
+  }
+  50% {
+    box-shadow: 0 0 35px #fff;
+  }
+}
 @media (max-width: 430px) {
   .hanger {
     width: 70%;
