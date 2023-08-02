@@ -237,7 +237,7 @@ function play() {
 	let tentativa = tries.value.toLowerCase();
 	for (let i = 0; i < chosenMovie.length; i++) {
 		if (tentativa === chosenMovie[i]) {
-			!ex.includes(tentativa) ? ex.push(chosenMovie[i]) : console.log(ex);
+			!ex.includes(tentativa) ? ex.push(chosenMovie[i]) : console.log();
 		} else {
 			if (!chosenMovie.includes(tentativa) && !erros.includes(tentativa)) {
 				erros.push(tentativa);
@@ -257,6 +257,5 @@ function play() {
 	tries.value = '';
 	fmont = montagem(chosenMovie, ex);
 }
-
 
 tries.addEventListener('input', play);

@@ -3,6 +3,7 @@
   margin: 0
   box-sizing: border-box
   font-family: 'Segoe UI', sans-serif
+
 body
   display: flex
   flex-direction: column
@@ -12,7 +13,6 @@ body
   padding: 2rem
   background: #707070
   color: #FFFFFF
-
 
 header
   padding: 1rem
@@ -38,6 +38,7 @@ header
     background: #fff
     border-radius: 50%
     color: #860303
+    font-weight: bolder
     font-size: 3rem
     width: 2ch
     height: 2ch
@@ -63,14 +64,35 @@ header
     width: 5ch
     display: grid
     place-content: center
-  & ul 
+  & ul
     display: flex
     align-items: flex-end
     flex-wrap: wrap
     gap: 1rem
-    & li 
+    & li
       font-size: 1.3 
       list-style: none
+
+#replay
+  border: none
+  padding-block: 0.5rem
+  padding-inline: 1rem
+  width: fit-content
+  border-radius: 5px
+  background: #ccc
+  color: #272727
+  box-shadow: 1px 1px 5px #000000d0
+  &:active
+    box-shadow: inset 2px 2px 5px #000000d0
+  &:hover
+    animation: 1s pulse infinite
+    transition: 600ms fade-out(#fff, 0.8%)
+
+@keyframes pulse
+  0%, 100%
+    box-shadow: 0 0 5px #fff
+  50%
+    box-shadow: 0 0 35px #fff
 
 @media (max-width: 430px)
   .hanger
