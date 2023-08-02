@@ -64,7 +64,7 @@ const filmes = [
 	'Efeito Borboleta',
 	'Ela',
 	'Entre Facas e Segredos',
-	'Erin Brockovich — Uma Mulher de Talento&nbsp',
+	'Erin Brockovich — Uma Mulher de Talento',
 	'Esqueceram de Mim',
 	'Ex Machina: Instinto Artificial',
 	'O Exorcista',
